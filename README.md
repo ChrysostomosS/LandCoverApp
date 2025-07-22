@@ -1,4 +1,4 @@
-# LandCoverApp
+# LandCoverApp: [Go to App](https://huggingface.co/spaces/chrysostomosS/LandCoverApp) 
 
 # 🛰️  Land Use and Land Cover Classification App
 
