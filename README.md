@@ -59,7 +59,7 @@ No setup is required — it runs directly in your browser using the trained mode
 
 ## 🏗️ Model Architecture & Training
 
-- **Base Model:** `MobileNetV3Large` (pretrained on ImageNet, top removed, average pooled)
+- **Base Model:** `MobileNetV3Small` (pretrained on ImageNet, top removed, average pooled)
 - **New Layers:**
   - Fully connected (Dense) layer with 256 units and ReLU activation
   - Dropout layer (rate = 0.3) for regularization
