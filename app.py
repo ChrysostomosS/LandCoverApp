@@ -1,11 +1,11 @@
 import gradio as gr
 import numpy as np
 from tensorflow.keras.models import load_model
-from tensorflow.keras.applications.mobilenet_v3 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
 from PIL import Image
 import requests
 from io import BytesIO
+from tensorflow.keras.applications.mobilenet_v3 import preprocess_input
 
 model = load_model("eurosat_classifier.keras", compile=False)
 
@@ -28,9 +28,10 @@ def load_image_from_url(url, display_size=(1000, 400)):
     image = image.resize(display_size)
     return image
 
+
 with gr.Blocks() as demo:
     gr.Markdown("## 🌍 Land Use and Land Cover Classification")
-    gr.Markdown("""Upload a satellite or aerial image, or select one of the example images below to classify it into 1 of the 10 land use categories.  
+    gr.Markdown("""Upload a satellite or aerial image, or select one of the example images below to classify it into 1 of the 10 land use categories.
 Categories include: Annual Crop, Forest, Herbaceous Vegetation, Highway, Industrial, Pasture, Permanent Crop, Residential, River, Sea/Lake
 """)
 
@@ -49,7 +50,7 @@ Categories include: Annual Crop, Forest, Herbaceous Vegetation, Highway, Industr
     with gr.Row():
         btn1 = gr.Button(value="Athens, Greece 🏙️")
         btn2 = gr.Button(value="Autobahn, Germany 🚗")
-        btn3 = gr.Button(value="Amazon River 🌊")
+        btn3 = gr.Button(value="Nile River 🌊")
 
     btn1.click(fn=lambda: load_image_from_url(
         "https://storage.googleapis.com/p-oaf-ibe-back-00e-strapi-uploads/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee.jpg"),
@@ -60,7 +61,7 @@ Categories include: Annual Crop, Forest, Herbaceous Vegetation, Highway, Industr
         outputs=image_input)
 
     btn3.click(fn=lambda: load_image_from_url(
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Amazon17_%285641020319%29.jpg/330px-Amazon17_%285641020319%29.jpg"),
+        "https://media.istockphoto.com/id/1363862783/photo/the-river-nile-aerial-elevated-view.jpg?s=612x612&w=0&k=20&c=fd8svvy5Ccs0HRc69wO5O-emWkHqKfou__UBdxZqT_I="),
         outputs=image_input)
 
 demo.launch()
