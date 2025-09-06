@@ -45,7 +45,7 @@ No setup is required — it runs directly in your browser using the trained mode
 |-------------|-----------------|-------------|
 | <img src="https://storage.googleapis.com/p-oaf-ibe-back-00e-strapi-uploads/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee.jpg" width="200"/> | Residential | Athen's Center, Greece |
 | <img src="https://www.shutterstock.com/image-photo/aerial-drone-view-road-junction-600nw-2380656867.jpg" width="200"/> | Highway | Autobahn, Germany |
-| <img src="[https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Amazon17_%285641020319%29.jpg/330px-Amazon17_%285641020319%29.jpg" width="200"/](https://media.istockphoto.com/id/1363862783/photo/the-river-nile-aerial-elevated-view.jpg?s=612x612&w=0&k=20&c=fd8svvy5Ccs0HRc69wO5O-emWkHqKfou__UBdxZqT_I=)> | River | Amazon floodpain |
+| <img src="https://media.istockphoto.com/id/1363862783/photo/the-river-nile-aerial-elevated-view.jpg?s=612x612&w=0&k=20&c=fd8svvy5Ccs0HRc69wO5O-emWkHqKfou__UBdxZqT_I=> | River | Amazon floodpain |
 
 ---
 
