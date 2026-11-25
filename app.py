@@ -53,7 +53,7 @@ Categories include: Annual Crop, Forest, Herbaceous Vegetation, Highway, Industr
         btn3 = gr.Button(value="Nile River 🌊")
 
     btn1.click(fn=lambda: load_image_from_url(
-        "https://storage.googleapis.com/p-oaf-ibe-back-00e-strapi-uploads/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee.jpg"),
+        "https://storage.googleapis.com/p-ssp-iep-prod-8ff-strapi-uploads/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee.jpg"),
         outputs=image_input)
 
     btn2.click(fn=lambda: load_image_from_url(

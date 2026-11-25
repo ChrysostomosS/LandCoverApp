@@ -1,6 +1,19 @@
-# LandCoverApp: [Go to App](https://huggingface.co/spaces/chrysostomosS/LandCoverApp) 
+---
+title: LandCoverApp
+emoji: 📉
+colorFrom: green
+colorTo: blue
+sdk: gradio
+sdk_version: 5.38.0
+app_file: app.py
+pinned: false
+---
 
-# 🛰️  Land Use and Land Cover Classification App
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+
+---
+
+# 🛰️ Land Use and Land Cover Classification App
 
 This project provides an **image classification app** trained to recognize **land use and land cover categories** from satellite images using the **EuroSAT dataset**. The model is built on top of **MobileNetV3** using **transfer learning**, and fine-tuned for high performance on remote sensing imagery.
 
@@ -43,9 +56,9 @@ No setup is required — it runs directly in your browser using the trained mode
 
 | Input Image | Predicted Class | Description |
 |-------------|-----------------|-------------|
-| <img src="https://storage.googleapis.com/p-oaf-ibe-back-00e-strapi-uploads/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee.jpg" width="200"/> | Residential | Athen's Center, Greece |
+| <img src="https://storage.googleapis.com/p-ssp-iep-prod-8ff-strapi-uploads/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee/Pl_A_iades_Neo_Athens_Greece_4bd3eabcee.jpg" width="200"/> | Residential | Athen's Center, Greece |
 | <img src="https://www.shutterstock.com/image-photo/aerial-drone-view-road-junction-600nw-2380656867.jpg" width="200"/> | Highway | Autobahn, Germany |
-| <img src="https://media.istockphoto.com/id/1363862783/photo/the-river-nile-aerial-elevated-view.jpg?s=612x612&w=0&k=20&c=fd8svvy5Ccs0HRc69wO5O-emWkHqKfou__UBdxZqT_I=" width="200"> | River | Nile River |
+| <img src="https://media.istockphoto.com/id/1363862783/photo/the-river-nile-aerial-elevated-view.jpg?s=612x612&w=0&k=20&c=fd8svvy5Ccs0HRc69wO5O-emWkHqKfou__UBdxZqT_I=" width="200"/> | River | Nile River |
 
 ---
 
@@ -80,6 +93,23 @@ Final model is exported in `.keras` format and used in a Gradio app.
 
 ---
 
+## Evaluation
+
+The dataset (27,000 Sentinel-2 RGB images across 10 classes) was partitioned using a deterministic stratified **70/15/15** split (`random_state=42`): **18,900** training, **4,050** validation, and **4,050** held-out test images. Data augmentation was restricted strictly to the training set; validation was used for `EarlyStopping` and `ReduceLROnPlateau`, and the test set was evaluated once after training.
+
+| Metric | Held-Out Test Set (n = 4,050) |
+| :--- | :---: |
+| **Top-1 Accuracy** | **96.25%** |
+| **Macro-F1** | **0.9612** |
+| **Weighted-F1** | **0.9625** |
+| **Per-Class F1 Range** | 0.93 – 0.99 |
+
+Most misclassifications occur between visually similar vegetation classes (e.g., *HerbaceousVegetation* and *PermanentCrop*), while *SeaLake* and *Residential* reach 0.99 F1.
+
+<img src="confusion_matrix.png" alt="Normalized Confusion Matrix" width="600">
+
+---
+
 ## 🧰 Tech Stack
 
 - **TensorFlow/Keras**
@@ -95,7 +125,8 @@ Final model is exported in `.keras` format and used in a Gradio app.
 - `app.py` – Gradio app using the trained model
 - `eurosat_classifier.keras` – Saved fine-tuned classification model
 - `requirements.txt` – Python dependencies
-
+- `LandCoverApp.ipynb` - Notebook used for the whole process
+- `confusion_matrix.png` - Confusion Matrix
 ---
 
 ## 📜 License & Credits
